@@ -7,9 +7,9 @@ permalink: /doc/en/lb4/todo-list-tutorial-has-one-relation.html
 summary: LoopBack 4 TodoList Application Tutorial - Add TodoListImage Relation
 ---
 
-We have that a `Todo` [`belongsTo`](../../BelongsTo-relation.md) a `TodoList`
-and a `TodoList` [`hasMany`](../../HasMany-relation.md) `Todo`s. Another type of
-relation we can add is [`hasOne`](../../HasOne-relation.md). To do so, let's add
+We have that a `Todo` [belongsTo](../../BelongsTo-relation.md) a `TodoList`
+and a `TodoList` [hasMany](../../HasMany-relation.md) `Todo`s. Another type of
+relation we can add is [hasOne](../../HasOne-relation.md). To do so, let's add
 `TodoListImage` such that each `TodoList` `hasOne` image. In parallel, a
 `TodoListImage` will belong to a `TodoList`, similar to how a `Todo` belongs to
 `TodoList`.
