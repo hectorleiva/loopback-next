@@ -14,6 +14,7 @@ import {
   ResolutionSession,
   ValueOrPromise,
 } from '../..';
+import {BindingScope} from '../../binding';
 import {Provider} from '../../provider';
 
 describe('Interception proxy', () => {
@@ -68,7 +69,7 @@ describe('Interception proxy', () => {
     expect(proxy.greet('Jane')).to.be.instanceOf(Promise);
   });
 
-  it('creates async methods for the proxy', () => {
+  it('creates async methods for the proxy', async () => {
     class MyController {
       name: string;
 
@@ -88,6 +89,8 @@ describe('Interception proxy', () => {
     }
 
     const proxy = createProxyWithInterceptors(new MyController(), ctx);
+    const greeting = await proxy.greet('John');
+    expect(greeting).to.eql('Hello, John');
 
     // Enforce compile time check to ensure the AsyncProxy typing works for TS
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -162,6 +165,42 @@ describe('Interception proxy', () => {
       'log: [my-controller] after-greet',
       'convertName: after-greet',
     ]);
+  });
+
+  it('supports asProxyWithInterceptors resolution option for singletons', async () => {
+    // Apply `log` to all methods on the class
+    @intercept(log)
+    class MyController {
+      // Apply multiple interceptors. The order of `log` will be preserved as it
+      // explicitly listed at method level
+      @intercept(convertName, log)
+      async greet(name: string) {
+        return `Hello, ${name}`;
+      }
+    }
+    ctx
+      .bind('my-controller')
+      .toClass(MyController)
+      .inScope(BindingScope.SINGLETON);
+
+    // Proxy version
+    let proxy = await ctx.get<MyController>('my-controller', {
+      asProxyWithInterceptors: true,
+    });
+    let msg = await proxy!.greet('John');
+    expect(msg).to.equal('Hello, JOHN');
+
+    // Non proxy version
+    const inst = await ctx.get<MyController>('my-controller');
+    msg = await inst.greet('John');
+    expect(msg).to.equal('Hello, John');
+
+    // Try the proxy again
+    proxy = await ctx.get<MyController>('my-controller', {
+      asProxyWithInterceptors: true,
+    });
+    msg = await proxy!.greet('John');
+    expect(msg).to.equal('Hello, JOHN');
   });
 
   it('supports asProxyWithInterceptors resolution option for dynamic value', async () => {

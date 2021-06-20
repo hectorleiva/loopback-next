@@ -1,12 +1,20 @@
 {
   "name": "@loopback/test-repository-postgresql",
-  "version": "2.2.0",
   "description": "Acceptance tests for `@loopback/repository` + `loopback-connector-postgresql`",
+  "version": "2.3.1",
   "private": true,
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-next.git",
+    "directory": "acceptance/repository-postgresql"
+  },
   "engines": {
-    "node": "^10.16 || 12 || 14 || 15"
+    "node": "^10.16 || 12 || 14 || 16"
   },
   "scripts": {
     "build": "lb-tsc",
@@ -16,28 +24,20 @@
     "mocha": "lb-mocha \"dist/__tests__/**/*.js\"",
     "verify": "npm pack && tar xf loopback-test-repository-postgresql*.tgz && tree package && npm run clean"
   },
-  "author": "IBM Corp.",
-  "copyright.owner": "IBM Corp.",
-  "license": "MIT",
-  "devDependencies": {
-    "@loopback/build": "^6.3.0",
-    "@loopback/eslint-config": "^10.1.0",
-    "@loopback/repository": "^3.5.0",
-    "@loopback/repository-tests": "^0.17.0",
-    "@loopback/testlab": "^3.3.0",
-    "@types/node": "^10.17.56",
-    "loopback-connector-postgresql": "^5.3.0",
-    "tslib": "^2.1.0"
-  },
   "files": [
     "README.md",
     "dist",
     "src",
     "!*/__tests__"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
-    "directory": "acceptance/repository-postgresql"
+  "devDependencies": {
+    "@loopback/build": "^6.4.1",
+    "@loopback/eslint-config": "^10.2.1",
+    "@loopback/repository": "^3.7.0",
+    "@loopback/repository-tests": "^0.18.1",
+    "@loopback/testlab": "^3.4.1",
+    "@types/node": "^10.17.60",
+    "loopback-connector-postgresql": "^5.4.0",
+    "tslib": "^2.3.0"
   }
 }

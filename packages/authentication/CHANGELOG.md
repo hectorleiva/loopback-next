@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [7.3.1](https://github.com/strongloop/loopback-next/compare/@loopback/authentication@7.3.0...@loopback/authentication@7.3.1) (2021-06-10)
+
+**Note:** Version bump only for package @loopback/authentication
+
+
+
+
+
+# [7.3.0](https://github.com/strongloop/loopback-next/compare/@loopback/authentication@7.2.0...@loopback/authentication@7.3.0) (2021-05-03)
+
+
+### Features
+
+* support node v16 ([ac99415](https://github.com/strongloop/loopback-next/commit/ac994154543bde22b4482ba98813351656db1b55))
+
+
+
+
+
+# [7.2.0](https://github.com/strongloop/loopback-next/compare/@loopback/authentication@7.1.0...@loopback/authentication@7.2.0) (2021-04-06)
+
+
+### Features
+
+* allow one strategy to fail the authentication process ([adbbf24](https://github.com/strongloop/loopback-next/commit/adbbf2439ffff42e5e6e3078d479e9c2031c196b))
+
+
+
+
+
 # [7.1.0](https://github.com/strongloop/loopback-next/compare/@loopback/authentication@7.0.7...@loopback/authentication@7.1.0) (2021-03-18)
 
 

@@ -3,6 +3,53 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/strongloop/loopback-next/compare/@loopback/docs@3.25.0...@loopback/docs@3.26.0) (2021-06-10)
+
+
+### Features
+
+* **repository:** change the relation has-many-through support unlinkAll target instance from source ([6968988](https://github.com/strongloop/loopback-next/commit/6968988516e76024e220185bc1fb41c9f032207e))
+* adds support for allowMigration false on repository mixin ([65719e9](https://github.com/strongloop/loopback-next/commit/65719e96f9289d956bf69001d4f1b6ca3cd27cb3))
+
+
+
+
+
+# [3.25.0](https://github.com/strongloop/loopback-next/compare/@loopback/docs@3.24.1...@loopback/docs@3.25.0) (2021-05-03)
+
+
+### Features
+
+* support node v16 ([ac99415](https://github.com/strongloop/loopback-next/commit/ac994154543bde22b4482ba98813351656db1b55))
+
+
+
+
+
+## [3.24.1](https://github.com/strongloop/loopback-next/compare/@loopback/docs@3.24.0...@loopback/docs@3.24.1) (2021-04-06)
+
+**Note:** Version bump only for package @loopback/docs
+
+
+
+
+
+# [3.24.0](https://github.com/strongloop/loopback-next/compare/@loopback/docs@3.23.0...@loopback/docs@3.24.0) (2021-04-06)
+
+
+### Bug Fixes
+
+* **docs:** fix mutation name in openapi-to-graphql how-to guide ([13aaa8c](https://github.com/strongloop/loopback-next/commit/13aaa8c165354fe55d2aedae345370cbe11e5677))
+
+
+### Features
+
+* allow one strategy to fail the authentication process ([adbbf24](https://github.com/strongloop/loopback-next/commit/adbbf2439ffff42e5e6e3078d479e9c2031c196b))
+
+
+
+
+
 # [3.23.0](https://github.com/strongloop/loopback-next/compare/@loopback/docs@3.22.0...@loopback/docs@3.23.0) (2021-03-18)
 
 

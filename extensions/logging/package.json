@@ -1,11 +1,26 @@
 {
   "name": "@loopback/logging",
-  "version": "0.5.0",
   "description": "An extension exposes logging for Winston and Fluentd with LoopBack 4",
+  "version": "0.6.1",
+  "keywords": [
+    "LoopBack",
+    "Cloud Native",
+    "Fluentd",
+    "Winston",
+    "Logging"
+  ],
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-next.git",
+    "directory": "extensions/logging"
+  },
   "engines": {
-    "node": "^10.16 || 12 || 14 || 15"
+    "node": "^10.16 || 12 || 14 || 16"
   },
   "scripts": {
     "build": "lb-tsc",
@@ -14,39 +29,9 @@
     "test": "lb-mocha \"dist/__tests__/**/*.js\"",
     "verify": "npm pack && tar xf loopback-extension-logging*.tgz && tree package && npm run clean"
   },
-  "author": "IBM Corp.",
-  "copyright.owner": "IBM Corp.",
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
-    "@loopback/core": "^2.15.0",
-    "@loopback/rest": "^9.2.0"
-  },
-  "dependencies": {
-    "fluent-logger": "^3.4.1",
-    "morgan": "^1.10.0",
-    "tslib": "^2.1.0",
-    "winston": "^3.3.3",
-    "winston-transport": "^4.4.0"
-  },
-  "devDependencies": {
-    "@loopback/build": "^6.3.0",
-    "@loopback/core": "^2.15.0",
-    "@loopback/eslint-config": "^10.1.0",
-    "@loopback/rest": "^9.2.0",
-    "@loopback/testlab": "^3.3.0",
-    "@types/morgan": "^1.9.2",
-    "@types/node": "^10.17.56"
-  },
-  "keywords": [
-    "LoopBack",
-    "Cloud Native",
-    "Fluentd",
-    "Winston",
-    "Logging"
-  ],
   "files": [
     "README.md",
     "dist",
@@ -54,9 +39,24 @@
     "!*/__tests__",
     "templates"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
-    "directory": "extensions/logging"
+  "peerDependencies": {
+    "@loopback/core": "^2.16.1",
+    "@loopback/rest": "^9.3.1"
+  },
+  "dependencies": {
+    "fluent-logger": "^3.4.1",
+    "morgan": "^1.10.0",
+    "tslib": "^2.3.0",
+    "winston": "^3.3.3",
+    "winston-transport": "^4.4.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^6.4.1",
+    "@loopback/core": "^2.16.1",
+    "@loopback/eslint-config": "^10.2.1",
+    "@loopback/rest": "^9.3.1",
+    "@loopback/testlab": "^3.4.1",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^10.17.60"
   }
 }

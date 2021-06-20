@@ -26,7 +26,7 @@ import {Class} from './common-types';
  */
 export type TypeResolver<
   Type extends Object,
-  StaticMembers = Function
+  StaticMembers = Function,
 > = () => Class<Type> & StaticMembers;
 
 /**

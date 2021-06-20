@@ -1,11 +1,19 @@
 {
   "name": "@loopback/service-proxy",
-  "version": "3.1.0",
   "description": "A common set of interfaces for interacting with service oriented backends such as REST APIs, SOAP Web Services, and gRPC microservices",
+  "version": "3.2.1",
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-next.git",
+    "directory": "packages/service-proxy"
+  },
   "engines": {
-    "node": "^10.16 || 12 || 14 || 15"
+    "node": "^10.16 || 12 || 14 || 16"
   },
   "scripts": {
     "acceptance": "lb-mocha \"dist/__tests__/acceptance/**/*.js\"",
@@ -17,25 +25,8 @@
     "unit": "lb-mocha \"dist/__tests__/unit/**/*.js\"",
     "verify": "npm pack && tar xf loopback-service-proxy*.tgz && tree package && npm run clean"
   },
-  "author": "IBM Corp.",
-  "copyright.owner": "IBM Corp.",
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
-  },
-  "peerDependencies": {
-    "@loopback/core": "^2.15.0"
-  },
-  "dependencies": {
-    "loopback-datasource-juggler": "^4.26.0",
-    "tslib": "^2.1.0"
-  },
-  "devDependencies": {
-    "@loopback/build": "^6.3.0",
-    "@loopback/core": "^2.15.0",
-    "@loopback/eslint-config": "^10.1.0",
-    "@loopback/testlab": "^3.3.0",
-    "@types/node": "^10.17.56"
   },
   "files": [
     "README.md",
@@ -43,9 +34,18 @@
     "src",
     "!*/__tests__"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
-    "directory": "packages/service-proxy"
+  "peerDependencies": {
+    "@loopback/core": "^2.16.1"
+  },
+  "dependencies": {
+    "loopback-datasource-juggler": "^4.26.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@loopback/build": "^6.4.1",
+    "@loopback/core": "^2.16.1",
+    "@loopback/eslint-config": "^10.2.1",
+    "@loopback/testlab": "^3.4.1",
+    "@types/node": "^10.17.60"
   }
 }

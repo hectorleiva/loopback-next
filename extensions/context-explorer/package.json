@@ -1,11 +1,25 @@
 {
   "name": "@loopback/context-explorer",
-  "version": "0.4.0",
   "description": "Visualize context hierarchy, bindings, configurations, and dependencies",
+  "version": "0.5.1",
+  "keywords": [
+    "LoopBack",
+    "Explorer",
+    "Context",
+    "Binding"
+  ],
+  "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "author": "IBM Corp.",
+  "copyright.owner": "IBM Corp.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/strongloop/loopback-next.git",
+    "directory": "extensions/context-explorer"
+  },
   "engines": {
-    "node": "^10.16 || 12 || 14 || 15"
+    "node": "^10.16 || 12 || 14 || 16"
   },
   "scripts": {
     "build": "lb-tsc",
@@ -14,34 +28,9 @@
     "test": "lb-mocha \"dist/__tests__/**/*.js\"",
     "verify": "npm pack && tar xf loopback-context-explorer*.tgz && tree package && npm run clean"
   },
-  "author": "IBM Corp.",
-  "copyright.owner": "IBM Corp.",
-  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
-  "peerDependencies": {
-    "@loopback/core": "^2.15.0",
-    "@loopback/rest": "^9.2.0"
-  },
-  "dependencies": {
-    "ts-graphviz": "^0.14.0",
-    "viz.js": "^2.1.2"
-  },
-  "devDependencies": {
-    "@loopback/build": "^6.3.0",
-    "@loopback/core": "^2.15.0",
-    "@loopback/eslint-config": "^10.1.0",
-    "@loopback/rest": "^9.2.0",
-    "@loopback/testlab": "^3.3.0",
-    "@types/node": "^10.17.56"
-  },
-  "keywords": [
-    "LoopBack",
-    "Explorer",
-    "Context",
-    "Binding"
-  ],
   "files": [
     "README.md",
     "dist",
@@ -49,9 +38,20 @@
     "public",
     "!*/__tests__"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
-    "directory": "extensions/context-explorer"
+  "peerDependencies": {
+    "@loopback/core": "^2.16.1",
+    "@loopback/rest": "^9.3.1"
+  },
+  "dependencies": {
+    "ts-graphviz": "^0.15.1",
+    "viz.js": "^2.1.2"
+  },
+  "devDependencies": {
+    "@loopback/build": "^6.4.1",
+    "@loopback/core": "^2.16.1",
+    "@loopback/eslint-config": "^10.2.1",
+    "@loopback/rest": "^9.3.1",
+    "@loopback/testlab": "^3.4.1",
+    "@types/node": "^10.17.60"
   }
 }
